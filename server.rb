@@ -7,10 +7,10 @@ disable :protection
 # put your default Twilio Client name here, for when a phone number isn't given
 default_client = "box"
 # Add a Twilio phone number or number verified with Twilio as the caller ID
-caller_id   = ENV['twilio_caller_id']
-account_sid = ENV['twilio_account_sid']
-auth_token  = ENV['twilio_auth_token']
-appsid      = ENV['twilio_app_id']
+caller_id   = '+50321131718'
+account_sid = 'AC910160278996f9a9a73d7371ad59ada8'
+auth_token  = '55efb1f256a4aa6cee97301f77e01d7b'
+appsid      = 'APe292140acf3bce044bf8f8215b6a47ed'
 api_key     = ENV['twilio_api_key']
 api_secret  = ENV['twilio_api_secret']
 sync_sid    = ENV['twilio_sync_service_sid']
