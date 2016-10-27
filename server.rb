@@ -90,4 +90,6 @@ post '/inbound' do
     end
     response2.text
 	
+	 erb :index, :locals => {:from => from}
+	
 end
