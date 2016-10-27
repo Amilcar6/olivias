@@ -15,6 +15,7 @@ api_key     = ENV['twilio_api_key']
 api_secret  = ENV['twilio_api_secret']
 sync_sid    = ENV['twilio_sync_service_sid']
 
+from_id = params[:From]
 
 get '/' do
     client_name = params[:client]
@@ -89,5 +90,5 @@ post '/inbound' do
         end
     end
     response2.text
-	puts from
+	
 end
