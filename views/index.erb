@@ -162,15 +162,22 @@
   <body>
 
     <div class="logos">
-      <div id="twilio"><a href="https://www.twilio.com"><img src="images/twilio-logo-2100x650.png" width="175px"></img></a></div>
+      <div id="twilio"><a href=""><img src="images/twilio-logo-2100x650.png" width="175px"></img></a></div>
       <h3>Box Burger local!</h3>
-      <div id="whitepages"><a href="http://pro.whitepages.com/developer/"><img src="https://scontent-mia1-2.xx.fbcdn.net/v/t1.0-9/13417609_1552501841711649_3234301971994801997_n.jpg?oh=81dc21d315492ef6e874cd59a85c90fb&oe=589BCE41" width="300px"></img></a></div>
+      <div id="whitepages"><a href=""><img src="https://scontent-mia1-2.xx.fbcdn.net/v/t1.0-9/13417609_1552501841711649_3234301971994801997_n.jpg?oh=81dc21d315492ef6e874cd59a85c90fb&oe=589BCE41" width="300px"></img></a></div>
       <!--div id="addons"><img src="//https://scontent-mia1-2.xx.fbcdn.net/v/t1.0-9/13417609_1552501841711649_3234301971994801997_n.jpg?oh=81dc21d315492ef6e874cd59a85c90fb&oe=589BCE41" width="300px"></img></a></div!-->
 
     </div>
+	
+	
     <%# The below line can be used to display your Twilio phone number %>
     <!--div class="phone">For demo call: <%=caller_id%> <%# </div!-->
 
+	
+	<div class="phone">Cliente: <%=from_id%> </div>
+	
+	
+	
     <button class="call" onclick="answer();">
       Answer
     </button>
