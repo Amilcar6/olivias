@@ -95,7 +95,7 @@
         // set the globalConn
       globalConn = conn;
       // Show the caller id info
-      $("#log").text("Call from: " + callerProfile.name);
+      $("#log").text("Numero del Cliente: " + conn.parameters.From);
       showCaller(callerProfile);
       // Add to call log
       $("<li>", {id: conn.Id, text: callerProfile.name}).click(function () {
