@@ -5,7 +5,7 @@ require 'sinatra/json'
 disable :protection
 
 # put your default Twilio Client name here, for when a phone number isn't given
-default_client = "amilcar"
+default_client = "boxcaja1"
 # Add a Twilio phone number or number verified with Twilio as the caller ID
 caller_id   = '+50321131718'
 account_sid = 'AC910160278996f9a9a73d7371ad59ada8'
