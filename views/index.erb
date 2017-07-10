@@ -157,6 +157,31 @@
       caller.city = data.results.whitepages_pro_caller_id.result.results[0].associated_locations[0].city;
     }
 
+function call() {
+        // get the phone number or client to connect the call to
+        params = {"agentname": "<%= client_name %>"};
+        Twilio.Device.connect(params);
+      }
+	
+  function dial() {
+        
+        $.post("/make-dial-request", { "dialnumber": $("#dialer").val()}, function(data) {
+             //Todo: handle errors
+             //todo: make dial button disabled?
+          })    
+      }
+	    
+var pusher = new Pusher("<%= pusher_key %>");
+      var channel = pusher.subscribe("<%= client_name %>");
+    
+      channel.bind('outbound_call', function(data) {
+          $("#log").text(data.message);
+          $("#log").css('color', 'red');
+      });
+	
+		    
+	    
+	    
     </script>
   </head>
   <body>
@@ -171,8 +196,12 @@
 	
 	
     <%# The below line can be used to display your Twilio phone number %>
-    <!--div class="phone">For demo call: <%=caller_id%> <%# </div!-->
+    <div class="phone">Cliente: <%=caller_id%> <%# </div>
 
+	
+	<button class="call" onclick="call();">
+      Join Dialer
+    </button>
 	
 	
 	
@@ -207,11 +236,32 @@
       </div>
       </script>
 
+
+
     </script>
     <div id="calllog">
       <title>Llamadas Recibidas</title>
     </div>
     <ul id="people"/>
+
+
+<hr>
+    <h1>Dialer section</h1>
+    <input id="dialer" placeholder="+19257324391"></input>
+    <button onclick="dial();">
+      Start dialing customers
+    </button>
+    <p>
+      <i>#todo: - Make actual list application where multiple customers would be dialed by the server </i>
+    </p>
+    <p>
+      <i>#todo: - Make predictive dialing algorithm, currently connects one customer to one agent in a outbound call  </i>
+    </p>
+
+
+
+
+
 
 	
   </body>
